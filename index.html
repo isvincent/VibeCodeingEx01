@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#3156d8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1424" media="(prefers-color-scheme: dark)">
+<meta name="description" content="100 個 Vibe Coding × Google 試算表 × GAS 生活應用案例與專屬開發提示詞">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem('vibe-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<title>Vibe Coding 100｜GAS 生活應用實例庫</title>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.2l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 17l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z" stroke-linejoin="round"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-dice" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="8.5" cy="8.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15.5" r="1.3" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.3" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" stroke-linejoin="round"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke-linecap="round"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2.5"/><path d="M15.5 8.5V6a1.5 1.5 0 0 0-1.5-1.5H6A1.5 1.5 0 0 0 4.5 6v8A1.5 1.5 0 0 0 6 15.5h2.5"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1" stroke-linecap="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m0 0-5-5m5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<a class="skip" href="#explore">跳到專案列表</a>
+
+<header class="topbar">
+  <div class="wrap topbar__in">
+    <a class="brand" href="#top" aria-label="Vibe Coding 100 首頁">
+      <img src="icon.svg" alt="" width="32" height="32">
+      <span>Vibe Coding</span><b>100</b>
+    </a>
+    <nav class="topnav" aria-label="主要導覽">
+      <a href="#explore">探索案例</a>
+      <a href="#guide">使用指引</a>
+      <button id="install" class="btn btn--soft btn--sm" hidden>安裝 App</button>
+      <button id="themeToggle" class="iconbtn" aria-label="切換深色模式">
+        <svg class="ico ico--moon"><use href="#i-moon"/></svg>
+        <svg class="ico ico--sun"><use href="#i-sun"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero__in">
+      <div class="hero__copy">
+        <p class="eyebrow"><span style="--h:150">GOOGLE SHEETS</span><span style="--h:265">APPS SCRIPT</span><span style="--h:320">AI</span></p>
+        <h1><span class="nw">100 個</span><span class="nw">生活應用，</span><br><em><span class="nw">一鍵生成</span><span class="nw">開發提示詞。</span></em></h1>
+        <p class="lead">從電子郵件、報名、閱讀到 AI 自動化。挑一個實例、調整需求，把完整提示詞交給 ChatGPT、Gemini 或 Claude，做出真正能用的網頁工具。</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--lg" href="#explore">開始探索<svg class="ico"><use href="#i-arrow"/></svg></a>
+          <button class="btn btn--ghost btn--lg" data-random><svg class="ico"><use href="#i-dice"/></svg>隨機給我一個</button>
+        </div>
+        <dl class="stats">
+          <div><dt>實例</dt><dd id="statTotal">100</dd></div>
+          <div><dt>分類</dt><dd id="statCats">10</dd></div>
+          <div><dt>難度</dt><dd>3 <small>級</small></dd></div>
+        </dl>
+      </div>
+
+      <figure class="sheet" aria-label="示意：資料欄位轉成提示詞">
+        <div class="sheet__bar">
+          <span class="sheet__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="sheet__name" id="sheetName">工作表</span>
+        </div>
+        <div class="sheet__grid" id="sheetGrid" aria-hidden="true"></div>
+        <div class="sheet__arrow" aria-hidden="true"><span>欄位</span><svg class="ico"><use href="#i-arrow"/></svg><span>提示詞</span></div>
+        <pre class="sheet__prompt" id="sheetPrompt" aria-hidden="true"></pre>
+        <figcaption class="sr-only">網站會依每個專案的資料欄位與功能，產生專屬開發提示詞。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="explore" id="explore" aria-labelledby="exploreTitle">
+    <div class="wrap">
+      <div class="sectionhead">
+        <div>
+          <p class="eyebrow">PROJECT LIBRARY</p>
+          <h2 id="exploreTitle">探索專案</h2>
+        </div>
+        <p id="count" class="count" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="wrap toolbar__in">
+        <label class="search">
+          <svg class="ico"><use href="#i-search"/></svg>
+          <input id="search" type="search" placeholder="搜尋名稱、功能、欄位…" aria-label="搜尋專案" autocomplete="off">
+          <kbd aria-hidden="true">/</kbd>
+        </label>
+        <div class="toolbar__row">
+          <select id="category" aria-label="篩選分類"><option value="">全部分類</option></select>
+          <select id="level" aria-label="篩選難度"><option value="">全部難度</option><option>入門</option><option>中階</option><option>進階</option></select>
+          <select id="sort" aria-label="排序"><option value="id">依編號</option><option value="title">依名稱</option><option value="level">依難度</option><option value="fav">收藏優先</option></select>
+          <button class="btn btn--ghost" id="onlyFav" aria-pressed="false"><svg class="ico"><use href="#i-star"/></svg>我的收藏<span class="badge" id="favCount">0</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div id="chips" class="chips" role="group" aria-label="分類快速篩選"></div>
+      <div id="cards" class="cards"></div>
+      <div id="empty" class="empty" hidden>
+        <p class="empty__title">找不到符合條件的專案</p>
+        <p>換個關鍵字，或清除目前的篩選條件。</p>
+        <button class="btn btn--soft" id="resetFilters">清除所有篩選</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="guide" class="guide" aria-labelledby="guideTitle">
+    <div class="wrap">
+      <p class="eyebrow">HOW IT WORKS</p>
+      <h2 id="guideTitle">三步驟，從想法到作品</h2>
+      <ol class="steps">
+        <li><span class="steps__no">01</span><h3>挑選實例</h3><p>用搜尋、分類與難度找到適合的應用，喜歡的先按星號收藏。</p></li>
+        <li><span class="steps__no">02</span><h3>調整提示詞</h3><p>設定使用對象、介面風格與進階功能，右側提示詞即時更新。</p></li>
+        <li><span class="steps__no">03</span><h3>交給 AI 開發</h3><p>複製或下載提示詞，請 AI 產出 GAS、RWD 網頁、PWA、部署與測試教學。</p></li>
+      </ol>
+      <p class="note"><b>提醒：</b>本網站是「實例瀏覽與提示詞產生器」，不是 100 個已完成的系統。AI 生成的程式仍須實際部署與測試。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <span>Vibe Coding 100 · Google 試算表 × GAS</span>
+    <span>收藏只存在這台裝置的瀏覽器，不會上傳</span>
+  </div>
+</footer>
+
+<dialog id="detail" aria-labelledby="modalTitle">
+  <div class="dlg">
+    <div class="dlg__head">
+      <div class="dlg__title">
+        <p id="modalCat" class="dlg__meta"></p>
+        <h2 id="modalTitle"></h2>
+      </div>
+      <div class="dlg__tools">
+        <button id="modalFav" class="iconbtn" aria-pressed="false" aria-label="收藏"><svg class="ico"><use href="#i-star"/></svg></button>
+        <button id="shareLink" class="iconbtn" aria-label="複製這個專案的連結"><svg class="ico"><use href="#i-link"/></svg></button>
+        <button id="close" class="iconbtn" aria-label="關閉"><svg class="ico"><use href="#i-close"/></svg></button>
+      </div>
+    </div>
+    <div class="dlg__body">
+      <div class="dlg__side">
+        <div id="modalIllus" class="illus illus--dlg" aria-hidden="true"></div>
+        <h3>專案專屬功能</h3>
+        <ul id="featureList" class="featurelist"></ul>
+        <h3>資料表建議欄位</h3>
+        <div id="fieldList" class="fieldrow"></div>
+        <h3>自訂提示詞</h3>
+        <div class="settings">
+          <label>主要使用對象<select id="audience"><option>一般使用者</option><option>高中學生</option><option>教師與學校行政人員</option><option>家庭成員</option><option>小型團隊</option></select></label>
+          <label>介面風格<select id="theme"><option>明亮現代、色彩豐富</option><option>極簡專業</option><option>活潑教育風</option><option>深色科技風</option></select></label>
+          <label>進階功能<select id="extra"><option>搜尋、篩選、排序、統計圖表</option><option>搜尋、篩選、CSV 匯出、圖表</option><option>互動儀表板、通知、資料匯出</option><option>多使用者角色、審核流程、圖表</option></select></label>
+        </div>
+      </div>
+      <div class="dlg__main">
+        <div class="prompthead">
+          <span>完整開發提示詞</span>
+          <span id="promptLen" class="mono"></span>
+        </div>
+        <textarea id="prompt" readonly aria-label="完整開發提示詞" spellcheck="false"></textarea>
+        <div class="actions">
+          <button class="btn btn--primary" id="copy"><svg class="ico"><use href="#i-copy"/></svg><span>複製完整提示詞</span></button>
+          <button class="btn btn--ghost" id="download"><svg class="ico"><use href="#i-down"/></svg>下載 .txt</button>
+        </div>
+        <p class="hint">提示詞會要求 AI 提供完整程式碼、操作指引、部署流程、安全設定及測試方式。AI 生成的程式仍須實際部署驗證。</p>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="illustrations.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>
